@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Portfolio" content="Doing assignment using HTML and CSS,  My first Portfolio">
+    <title>Portfolio</title>
+
+
+    <!--Style Field TwT-->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /*full page layout*/
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #130423;
+            color: #F8FAFC;
+            padding: 0;
+
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 80px;
+            background-color: rgba(11, 2, 20, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ab66ef;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .logo:hover {
+            color: #c731f4;
+            text-shadow: 0 0 20px #c084fc;
+        }
+
+        nav a {
+            color: #ab66ef;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: 0.3s;
+
+        }
+
+        nav a:hover {
+            color: #c731f4;
+            text-shadow: 0 0 20px #c084fc;
+
+        }
+
+        /*Introduction*/
+        .watashi {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 80px 80px 80px;
+            min-height: 80vh;
+
+
+        }
+
+        .watashi-text {
+            flex: 1;
+            padding: 80px 10px;
+        }
+
+        .watashi-text .hello {
+            color: #b97ff2;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .watashi-text .hello:hover {
+            color: #c731f4;
+            text-shadow: 0 0 20px #c084fc;
+            transition: 0.3s;
+        }
+
+        .watashi-text .title {
+            color: #ec4899;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .watashi-text .title:hover {
+            color: #c731f4;
+            text-shadow: 0 0 20px #c084fc;
+        }
+
+        .watashi-text .name {
+            font-size: 50px;
+            font-family: sans-serif;
+            font-weight: 800;
+            margin: 3px 0;
+            color: #b97ff2
+        }
+
+        .watashi-text .name:hover {
+            color: #c731f4;
+
+        }
+
+        .watashi-text .bio {
+            color: #94a3b8;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .watashi-text .bio:hover {
+            color: #c731f4;
+            text-shadow: 0 0 20px #c084fc;
+
+        }
+
+        .watashi-text .certificate {
+            color: #ec4899;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 5px;
+        }
+
+        .watashi-text .certificate:hover {
+            color: #c731f4;
+            text-shadow: 0 0 10px #c084fc;
+        }
+
+
+        /*btn-design*/
+        .watashi-btn {
+            display: flex;
+            gap: 20px;
+        }
+
+        .watashi-btn a {
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+            margin: 30px 10px;
+            text-decoration: none;
+        }
+
+        .btn-hire {
+            border: 2px solid #334155;
+            background: #b97ff2;
+            color: white;
+            box-shadow: 0 0 15px rgba(185, 127, 242, 0.4);
+        }
+
+        .btn-hire:hover {
+            border-color: #b97ff2;
+            box-shadow: 0 0 25px rgba(185, 127, 242, 0.8);
+            background-color: rgba(185, 127, 242, 0.1);
+        }
+
+        .btn-resume {
+            border: 2px solid #334155;
+            color: white;
+            box-shadow: 0 0 15px rgba(185, 127, 242, 0.4);
+        }
+
+        .btn-resume:hover {
+            border-color: #b97ff2;
+            background-color: rgba(185, 127, 242, 0.1);
+        }
+
+        /*Img*/
+        .watashi-image {
+            flex: 1;
+            justify-content: center;
+            display: flex;
+
+        }
+
+        .watashi-image img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 0 25px rgba(185, 127, 242, 0.3);
+        }
+
+        .watashi-image img:hover {
+            border-color: #b97ff2;
+
+            box-shadow: 0 0 15px rgba(185, 127, 242, 0.8);
+            background-color: #190b2e;
+        }
+
+
+        /*Skills Container*/
+        .skill-features {
+            padding: 100px 80px;
+            background-color: #0b0214;
+            text-align: center;
+        }
+
+        .skill-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #ffffff;
+            position: relative;
+            text-shadow: 0 0 20px #c084fc;
+        }
+
+        .skill-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 100px;
+            height: 3px;
+            background: #b97ff2;
+            border-radius: 2px;
+            transform: translateX(-50%);
+        }
+
+        .skill-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0;
+            max-width: 1300px;
+            gap: 30px;
+        }
+
+        .skill-box {
+            background-color: #120721;
+            border: 1px solid #25123e;
+            border-radius: 10px;
+            width: 280px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .skill-img-box {
+            width: 100%;
+            height: 150px;
+
+        }
+
+        .skill-img-box img {
+            width: 100%;
+            height: 100%;
+            transition: 0.5s;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .skill-card h3 {
+            font-size: 18px;
+            color: #ffffff;
+
+        }
+
+        .skill-card p {
+            font-size: 13px;
+            color: #a5a1b8;
+            margin: 0;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-8px);
+            border-color: #b97ff2;
+            box-shadow: 0 0 25px rgba(185, 127, 242, 0.8);
+            background-color: rgba(185, 127, 242, 0.1);
+        }
+
+        /*About*/
+        .about-section {
+            padding: 100px 80px;
+            background-color: #0b0214;
+        }
+
+        .about-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 12;
+        }
+
+        .about-title {
+            font-size: 32px;
+            font-width: 700;
+            color: #ffffff;
+            margin-bottom: 25px;
+            text-shadow: 0 0 20px #c084fc;
+        }
+
+        .about-p {
+            font-size: 16px;
+            color: #94a3b8;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .btn-cv {
+            display: inline-block;
+            text-decoration: none;
+            border: 2px solid #334155;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: 10px;
+            background: #b97ff2;
+            color: white;
+            background-color: rgba(178, 112, 245, 0.1);
+            box-shadow: 0 0 20px rgba(185, 127, 242, 0.3);
+        }
+
+        .btn-cv:hover {
+            background: #b97ff2;
+            box-shadow: 0 0 15px rgba(185, 127, 242, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .about-image {
+            display: flex;
+            flex: 5;
+            justify-content: center;
+        }
+
+        .about-image img {
+            max-width: 350px;
+            width: 100%;
+            border-radius: 20px;
+            border: 2px solid #25123e;
+            box-shadow: 0 0 30px rgba(185, 127, 242, 0.2);
+            transition: 0.5s;
+        }
+
+        .about-image img:hover {
+            border-color: #b97ff2;
+            box-shadow: 0 0 40px rgba(185, 127, 242, 0.5);
+        }
+
+        /*Project Section*/
+        .pro-section {
+            padding: 100px 80px;
+            background-color: #0b0214;
+            text-align: center;
+        }
+
+        .pro-main-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #b97ff2;
+            text-shadow: 0 0 20px #c084fc;
+            margin-bottom: 60px;
+        }
+
+        .pro-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pro-box {
+            background-color: #120721;
+            border: 1px solid #25123e;
+            border-radius: 12px;
+            padding: 35px 25px;
+            width: 360px;
+            box-sizing: border-box;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .pro-text-box {
+            width: 100%;
+        }
+
+        .pro-text-box h3 {
+            font-size: 19px;
+            color: #ffffff;
+            margin: 0 0 12px 0;
+        }
+
+        .pro-text-box p {
+            font-size: 14px;
+            color: #a5a1b8;
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+        }
+
+        .view-project-link {
+            display: inline-block;
+            font-size: 13px;
+            color: #ec4899;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .view-project-link:hover {
+            color: #b97ff2;
+            text-shadow: 0 0 10px #b97ff2;
+            transform: translateX(3px);
+        }
+
+        .pro-box:hover {
+            transform: translateY(-8px);
+            border-color: #ec4899;
+            box-shadow: 0 0 25px rgba(236, 72, 153, 0.25);
+            background-color: #170a2b;
+        }
+
+        /*Contact*/
+        .contact-section {
+            padding: 100px 80px;
+            background-color: #0d031a;
+            text-align: center;
+        }
+
+        .contact-main-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #b97ff2;
+            margin-bottom: 60px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 15px;
+            color: #a5a1b8;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            font-size: 15px;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 40px;
+            background-color: #120721;
+            border: 2px solid #ec4899;
+            border-radius: 20px;
+            border-radius: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            border-color: #b97ff2;
+            color: #b97ff2;
+            box-shadow: 0 0 15px rgba(185, 127, 242, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .contact-form-box {
+            flex: 1;
+            width: 100%;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 15px;
+            background-color: #120721;
+            border: 2px solid #ec4899;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 14px;
+            outline: none;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus .input-group textarea:focus {
+            border-color: #ec4899;
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.2);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background-color: transparent;
+            border: 2px solid #ec4899;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #ec4899;
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+            transform: translateY(-3px);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--Header Section-->
+    <header>
+        <div class="logo">Win Thant Aung</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact Me</a>
+
+        </nav>
+    </header>
+
+    <!--Jibon no kaisha-->
+    <section class="watashi" id="home">
+        <div class="watashi-text">
+            <p class="hello">Hello, I'm</p>
+            <h2 class="title">IT Developer Student</h2>
+            <h1 class="name">Win Thant Aung</h1>
+            <p class="bio">Studying IT Major and Web Developing.</p>
+            <h3 class="certificate">ITPEC FE Passed,English(B1 level),JLPT N2</h3>
+            <p class="bio">Final senior student of</p>
+            <p class="bio">Metro IT Myanmar Collage.</p><br>
+            <br>
+
+            <div class="watashi-btn">
+                <a href="#contact" class="btn-hire"> Hire Me </a>
+                <a href="#" class="btn-resume">Get Resume</a>
+            </div>
+        </div>
+
+        <div class="watashi-image">
+            <img src="Image/profile2.jpg">
+        </div>
+
+    </section>
+
+    <!--Skills-->
+    <section id="skills" class="skill-features">
+
+        <h2 class="skill-title">My Featured Skills</h2>
+
+        <!--Skills Container Box-->
+        <div class="skill-container">
+            <div class="skill-box">
+                <div class="skill-img-box">
+                    <img src="Image/WebDesign.jpg" alt="Web Design">
+                </div>
+                <h3>Web Design</h3>
+                <p>Designing</p>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-img-box">
+                    <img src="Image/WebDevelopment.jpg" alt="Web Development">
+                </div>
+                <h3>Web Development</h3>
+                <p>Development</p>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-img-box">
+                    <img src="Image/SEO.jpg" alt="SEO">
+                </div>
+                <h3>SEO</h3>
+                <p>Optimization</p>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-img-box">
+                    <img src="Image/ContentWriting.jpg" alt="Content Writing">
+                </div>
+                <h3>Content Writing</h3>
+                <p>Writing</p>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-img-box">
+                    <img src="Image/DigitalMarketing.jpg" alt="Digital Marketing">
+                </div>
+                <h3>Digital Marketing</h3>
+                <p>Marketing</p>
+            </div>
+
+            <!--  <div class="skill-box">
+                <div class="skill-img-box">
+                    <img src="Image/VideoEditing.jpg" alt="Video Editing">
+                </div>
+                <h3>Video Editing</h3>
+                <p>Editing</p>
+            </div>
+        -->
+            <div class="skill-box">
+                <div class="skill-img-box">
+                    <img src="Image/Java.jpg" alt="JAVA">
+                </div>
+                <h3>Java Programming</h3>
+                <p>Java</p>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-img-box">
+                    <img src="Image/python.jpg" alt="Python">
+                </div>
+                <h3>Python Programming</h3>
+                <p>Python</p>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-img-box">
+                    <img src="Image/PromptEngineering.jpg" alt="AI">
+                </div>
+                <h3>Prompt Engineering</h3>
+                <p>AI</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!--About-->
+    <section id="about" class="about-section">
+        <div class="about-container">
+
+            <div class="about-text">
+                <h2 class="about-title">About Me</h2>
+                <p class="about-p">
+                    My name is Win Thant Aung, an IT Development Student currently completing my final senior year at
+                    Metro IT
+                    Myanmar College.
+                    I have a strong passion for information technology, security and programming.
+                </p>
+                <p class="about-p">
+                    My core learning includes Frontend development, Database design, programming languages and building
+                    scalable web
+                    applications.
+                    And I am a student who wants to work in the cyber security field.
+                    I keep learning how attackers target important data, network and computer systems.
+                    I always look forward to learning new tech stacks and solving real-world programming challenges and
+                    cyber security
+                    attacks.
+                    In the future, I hope to become a good security helper.
+                </p>
+
+                <a href="#" class="btn-cv">Download CV</a>
+            </div>
+
+            <div class="about-image">
+                <img src="Image/MyPhoto1.jpg" alt="Win Thant Aung">
+            </div>
+
+        </div>
+    </section>
+
+    <!--Project-->
+    <section id="projects" class="pro-section">
+        <h2 class="pro-main-title">My Projects</h2>
+
+        <div class="pro-container">
+
+            <div class="pro-box">
+                <div class="pro-text-box">
+                    <h3>Web Development</h3>
+                    <p>Web development refers to the creating, building, and maintaining of websites.</p>
+                    <a href="#" class="view-project-link">View Project ➔</a>
+                </div>
+            </div>
+
+            <div class="pro-box">
+                <div class="pro-text-box">
+                    <h3>Network Administration</h3>
+                    <p>Network administration involves the management and maintenance of computer networks.</p>
+                    <a href="#" class="view-project-link">View Project ➔</a>
+                </div>
+            </div>
+
+            <div class="pro-box">
+                <div class="pro-text-box">
+                    <h3>Cyber Security</h3>
+                    <p>Implementing security protocols, vulnerability assessments, and safeguarding digital assets.</p>
+                    <a href="#" class="view-project-link">View Project ➔</a>
+                </div>
+            </div>
+
+            <div class="pro-box">
+                <div class="pro-text-box">
+                    <h3>Content Writing</h3>
+                    <p>Content writing involves the creation of written content for websites and blogs.</p>
+                    <a href="#" class="view-project-link">View Project ➔</a>
+                </div>
+            </div>
+
+            <div class="pro-box">
+                <div class="pro-text-box">
+                    <h3>Digital Marketing</h3>
+                    <p>Digital marketing refers to the use of digital channels to promote products or services.</p>
+                    <a href="#" class="view-project-link">View Project ➔</a>
+                </div>
+            </div>
+
+            <div class="pro-box">
+                <div class="pro-text-box">
+                    <h3>Video Editing</h3>
+                    <p>Video editing is the process of manipulating and arranging video shots creatively.</p>
+                    <a href="#" class="view-project-link">View Project ➔</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--Contact-->
+
+    <section id="contact" class="contact-section">
+
+        <h2 class="contact-main-title">Contact Me</h2>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>If you have any questions or want to work together, feel free to drop a message or reach out via
+                    social
+                    media.</p>
+                <div class="info-item">📧 aungw9944@email.com</div>
+                <div class="info-item">📍 East Hling Thar Yar, KyinSitMin Residence, Minkabar Street,
+                    Bulding 81.
+                </div>
+                <div class="info-item">📞 +95 9764584966</div>
+                <div class="social-links">
+
+                    <a href="#">Facebook.com</a><br>
+                    <a href="#">Gmail.com</a><br>
+                    <a href="#">Telegram.com</a><br>
+                </div>
+            </div>
+
+            <div class="contact-form-box">
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message ➤</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer></footer>
+</body>
+
+</html>
